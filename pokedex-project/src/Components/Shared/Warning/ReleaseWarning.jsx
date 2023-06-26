@@ -22,18 +22,21 @@ export default function ReleaseWarning({ pokemon, goToDex }) {
   }, [pokemon]);
 
   return (
-    <ModalHolder>
-      <WarningModal>
-        <CaughtTextStyle>
-          <p>You released your</p>
-          <h4>{pokemon.name}!</h4>
-        </CaughtTextStyle>
-        {pokemon.shiny ? (
-          <PokeAnim src={pokemon.animatedBackShiny} />
-        ) : (
-          <PokeAnim src={pokemon.animatedBackDefault} />
-        )}
-      </WarningModal>
-    </ModalHolder>
+    pokemon.animatedBackShiny &&
+    pokemon.animatedBackDefault && (
+      <ModalHolder>
+        <WarningModal>
+          <CaughtTextStyle>
+            <p>You released your</p>
+            <h4>{pokemon.name}!</h4>
+          </CaughtTextStyle>
+          {pokemon.shiny ? (
+            <PokeAnim src={pokemon.animatedBackShiny} />
+          ) : (
+            <PokeAnim src={pokemon.animatedBackDefault} />
+          )}
+        </WarningModal>
+      </ModalHolder>
+    )
   );
 }

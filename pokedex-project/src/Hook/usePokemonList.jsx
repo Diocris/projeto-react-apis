@@ -61,6 +61,5 @@ export const usePokemonList = () => {
     });
   });
 
-  console.log(pokeDexList);
   return { pokemons, pokeDexList, pokemonList, change, setChange };
 };

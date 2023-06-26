@@ -36,7 +36,7 @@ export default function Warning({ pokemon, setCaughtPokemon, goToDex }) {
     }
   }, [caught]);
 
-  return caught ? (
+  return pokemon.animatedDefault && pokemon.animatedShiny ? (
     <ModalHolder>
       <WarningModal>
         {shiny ? (

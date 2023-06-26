@@ -24,13 +24,15 @@ export const releasePokemon = (pokemon, setter, change, setChange, setIsCaught) 
     })
 
 
-
     setter(true)
     setTimeout(() => {
         caughtPokemons.splice(index, 1)
         setChange(change + 1)
         setter(false)
-        setIsCaught(false)
+        if (setIsCaught) {
+            setIsCaught(false)
+        }
+
     }, 2000)
 }
 
