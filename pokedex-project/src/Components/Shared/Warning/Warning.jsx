@@ -14,7 +14,7 @@ export default function Warning({ pokemon, setCaughtPokemon, goToDex }) {
   const { change, setChange } = usePokemonContext();
 
   const shinyProb = Math.floor(Math.random() * 100 + 1);
-  const shiny = shinyProb > 50 ? true : false;
+  const shiny = shinyProb > 70 ? true : false;
   const catchProb = Math.floor(Math.random() * 100 + 1);
   const caught = catchProb > 30 ? true : false;
 
