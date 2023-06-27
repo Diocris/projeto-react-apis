@@ -8,15 +8,17 @@ display: ${(props) => props.display};
   border-radius: 1rem;
   padding: 0.5rem;
   height: 16.63rem;
-  flex-basis: 27.5rem;
-  min-width: 27.5rem;
+  grid-area: span 4;
 
-  @media (max-width: 60.125rem) {
-    flex-basis: 50%;
-    min-width: 26.5rem;
+  @media (max-width: 47.625rem) {
+    grid-area: span 2;
+  }
+  @media (max-width: 662px) {
+    min-width: 80%;
+
   }
   @media (max-width: 462px) {
-    scale: 0.8;
+    min-width: 364px;
   }
 
 `
@@ -24,8 +26,8 @@ display: ${(props) => props.display};
 
 export const PokemonImage = styled.img`
     aspect-ratio: 1/3;
-    width: 12.06rem;
-    height: 12.06rem;
+    width: 40%;
+    height: 70%;
     float: right;
     position: absolute;
   left: 50%;
@@ -41,7 +43,8 @@ export const PokeballBg = styled.img`
     transform: translate(-15%,-5.5%);
     z-index: 0;
     clip-path: inset(22.5% 0 0 0);
-
+    width: 60%;
+    height: 100%;
   @media (max-width: 60.125rem) {
     clip-path: inset(22.5% 0 0 0);
   }
@@ -96,6 +99,7 @@ export const ButtonWrapper = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
+    background-color: ${(props) => props.color};
     font: 1rem;
     text-align: center;
     min-width: 7.5rem;

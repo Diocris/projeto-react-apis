@@ -17,12 +17,12 @@ export default function PokedexPage() {
   const [shinyCaught, setShinyCaught] = useState([]);
 
   useEffect(() => {
-    const caughtNames = caughtPokemon.map((pokemon) => {
+    const caughtNames = caughtPokemons.map((pokemon) => {
       return pokemon.name;
     });
     setIsCaught(caughtNames);
 
-    const caughtShinies = caughtPokemon.filter((pokemon) => {
+    const caughtShinies = caughtPokemons.filter((pokemon) => {
       return pokemon.shiny === true;
     });
     setShinyCaught(caughtShinies);
@@ -40,19 +40,15 @@ export default function PokedexPage() {
       <h1 style={{ color: "white", margin: "2rem 0rem 1rem 4rem" }}>
         Pokedex Page
       </h1>
-
+      {!caughtPokemons.length > 0 && (
+        <p style={{ fontSize: "2rem", textAlign: "center", color: "#ffffff" }}>
+          There is no Pokemon caught to be displayed yet! <br />
+          <br />
+          Go back and gotta catch'em all!
+        </p>
+      )}
       <PokemonListWrapper>
-        <PokedexPageCards>
-          {caughtPokemons.length > 0 ? (
-            pokemonsCard
-          ) : (
-            <p className="empty-list-text">
-              There is no Pokemon caught to be displayed yet! <br />
-              <br />
-              Go back and gotta catch'em all!
-            </p>
-          )}
-        </PokedexPageCards>
+        <PokedexPageCards>{pokemonsCard}</PokedexPageCards>
       </PokemonListWrapper>
     </>
   );
